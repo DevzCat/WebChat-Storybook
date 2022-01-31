@@ -1,0 +1,11 @@
+.webchat-container {
+  position: fixed;
+  overflow: hidden;
+}
+
+.webchat-label {
+  text-align: center;
+}
+
+.webchat-body {
+}
