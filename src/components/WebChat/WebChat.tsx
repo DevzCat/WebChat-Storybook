@@ -135,6 +135,7 @@ export default function WebChat({
     styleOptions['bubbleFromUserTextColor'] = '#000000'
   }
 
+  /*
   // useMemo hooks.
   const directLine = useMemo(
     () => createDirectLine(tokens['directLine']),
@@ -147,6 +148,13 @@ export default function WebChat({
       }),
     [tokens],
   )
+  */
+  
+  // instead of using useMemo hook, using normal.
+  const directLine = createDirectLine(tokens['directLine'])
+  const webSpeechPonyfillFactory = createCognitiveServicesSpeechServicesPonyfillFactory({
+    credentials: tokens['speech']
+  })
 
   // engines (prioritize the background-image first, then background gradient and then background color).
   if (backgroundImage) {
